@@ -8,6 +8,7 @@ node {
     stage ('Image') {
         
         sh 'docker --version'
+        sh 'mvn --version'
         
         def customImage = docker.build('nodejsdockerwebapp')
 
