@@ -6,9 +6,10 @@ node {
     }
     
     stage ('Image') {
-        sh 'chmod u+x docker'
         
-        def customImage = docker.build('miltonc/dockerwebapp')
+        sh 'docker --version'
+        
+        def customImage = docker.build('nodejsdockerwebapp')
 
         /* Push the container to the custom Registry */
         //customImage.push()
