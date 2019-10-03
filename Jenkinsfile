@@ -15,4 +15,8 @@ node {
         /* Push the container to the custom Registry */
         //customImage.push()
     }
+    
+    stage ('Run') {
+            docker.image("nodejsdockerwebapp").run('-p 49001:8080 --name nodejsapp')
+        }
 }
