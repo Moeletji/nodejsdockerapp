@@ -6,12 +6,9 @@ node {
     }
     
     stage ('Image') {
-        dir ('docker-pipeline') {
+        def customImage = docker.build('miltonc/dockerwebapp')
 
-            def customImage = docker.build('miltonc/dockerwebapp')
-
-            /* Push the container to the custom Registry */
-            //customImage.push()
-        }
+        /* Push the container to the custom Registry */
+        //customImage.push()
     }
 }
